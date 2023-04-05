@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Responsive Navbar</title>
+	<style>
+	* {
+  margin: 0;
+}
+
+/* Default styles */
+header {
+  background-color: #101014;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li:first-child {
+  margin-left: 0;
+}
+
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Media queries */
+@media only screen and (max-width: 991px) {
+  header {
+    padding: 10px;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background-color: #101014;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  nav ul li {
+    margin: 10px 0;
+  }
+  
+  nav ul li:first-child {
+    margin-top: 0;
+  }
+  
+  nav ul li:last-child {
+    margin-bottom: 0;
+  }
+  
+  nav.active {
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+	<header>
+        <div class="container">
+          <a href="#" class="logo">Logo</a>
+          <nav>
+            <ul>
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+            </ul>
+          </nav>
+          <div class="menu-toggle"><span></span><span></span><span></span></div>
+        </div>
+      </header>
+      
+      
+	<script>
+        const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav');
+
+menuToggle.addEventListener('click', function() {
+  nav.classList.toggle('active');
+});
+
+	</script>
+</body>
+</html>
