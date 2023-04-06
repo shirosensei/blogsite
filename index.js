@@ -23,20 +23,40 @@ const hamburger = document.querySelector('.hamburger');
 const nav = document.querySelector('nav');
 
 hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  nav.classList.toggle('active');
+    hamburger.classList.toggle('active');
+    nav.classList.toggle('active');
 });
 
+const detailsSummaries = document.querySelectorAll("details summary");
 
+detailsSummaries.forEach(summary => {
+    summary.addEventListener("click", () => {
+        const detailsContent = summary.nextElementSibling;
+        summary.parentElement.classList.toggle("open");
+        if (detailsContent.style.display === "block") {
+            detailsContent.style.display = "none";
+        } else {
+            detailsContent.style.display = "block";
+        }
+    });
+});
 
+ // Get the current date and time
+ const now = new Date();
+ const dateString = now.toDateString();
+ const timeString = now.toLocaleTimeString();
+
+ // Update the HTML with the date and time
+ const dateEl = document.getElementById("date");
+ dateEl.textContent = dateString + " at " + timeString;
 
 class Animal {
     constructor(name, breed) {
         this._name = name;
         this._breed = breed;
     }
-    get name() { 
-        return this._name; 
+    get name() {
+        return this._name;
     }
 
     get breed() {
@@ -49,15 +69,15 @@ class Animal {
 
 }
 
-class Front extends Animal{
+class Front extends Animal {
     constructor(name, breed, type) {
         super(name, breed);
         this._type = type;
     }
-    get type() { 
-        return this._type; 
+    get type() {
+        return this._type;
     }
-    Bark() { 
+    Bark() {
         console.log(`Hello, I am ${this._name} and I am a ${this._breed}`)
     }
 }
@@ -67,6 +87,6 @@ let machine = new Front('Panda', 'Lhasa Aspo', 'Dog')
 
 let Doglist = [frontier, machine]
 
-for(dog of Doglist) {
-    dog.Bark() 
+for (dog of Doglist) {
+    dog.Bark()
 }
