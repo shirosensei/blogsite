@@ -1,12 +1,26 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=Outfit&family=Roboto&display=swap');
+  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-html {
+:root {
+  --whitesmoke: 	rgb(245,245,245);
+  --off-white : rgb(250, 249, 246);
+  --main-bg-color: coral;
+}
+
+html:focus-within {
   scroll-behavior: smooth;
 }
 
 body {
- height: 100%;
- 
  margin: 0;
 }
 
@@ -14,7 +28,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(180deg, #101410, rgb(117, 115, 115) 10%, #77778e);
+  
+  /* background-color: #011627; */
+
+   background: linear-gradient(180deg, #101410, rgb(117, 115, 115) 10%, #77778e); 
+  
   padding: 20px 10px 10px 10px;
   color: #fff;
   position: relative;
@@ -61,6 +79,7 @@ main {
   margin: 10px;
   display: flex;
   flex-wrap: wrap;  
+  flex-direction: column;
 }
 
 section {
@@ -129,6 +148,7 @@ details[open] summary::after {
   position: absolute;
 } 
 
+
 .container {
   display: flex;
   flex-direction: column;
@@ -148,23 +168,36 @@ details[open] summary::after {
   height: 80px;
 }
 
-section:nth-of-type(2) {
-  background-color: green;
-}
 
+@media screen and (min-width: 320px) and (max-width: 768px) {
 
-@media (max-width: 768px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  /* CSS styles here */
   body {
-    width: 100% !important;
+    margin: 0;
+    /* background-color: rgb(232,232,232); */
+    background-color: #f6f5f7;
+    font-family: OpenSans,sans-serif;
+  }
+  header {
+    background: linear-gradient(hsl(216, 11%, 9%), hsl(23, 8%, 20%), hsl(20, 9%, 4%));
   }
   
+  header {
+    width: 100%;
+    
+  }
+
   nav {
     display: none;
     position: absolute;
     top: 60px;
     left: 0;
     width: 100%;
-    background: linear-gradient(180deg, #101410, rgb(117, 115, 115) 10%, #77778e);
+    background: linear-gradient(90deg, #011627, rgb(117, 115, 115), #77778e);
     /* background-color: #101014; */
   }
 
@@ -227,21 +260,132 @@ section:nth-of-type(2) {
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
-    width: 100%;
+    /* width: 100%; */
   }
 
+  main ul {
+    list-style-type: none;
+    font-size: 1em;
+  }
+
+  .blog-container {
+    width: 100%;
+    box-sizing: border-box;
+    /* box-shadow: 1px 2px 0px 2px rgba(0, 0, 25, .2); */
+    box-shadow: 0 3px 10px rgba(25,17,34,.05);
+    border-radius: 3px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255);
+ 
+
+  }
+
+  h3 {
+    display: block;
+    margin: 0;
+    font-weight: bold;
+    
+  }
+
+  
+  .blog-description {
+    border: solid #fff 1px;
+    padding: 10px 10px -0px 10px;
+     box-shadow: 10px 13px 10px rgba(25,17,34,.05);
+     margin-top: 50px;
+
+  }
+
+  .blog-links {
+   text-decoration: none; 
+   position: relative;
+   color: #333;
+   font-family: 'Roboto', sans-serif;
+   cursor: pointer;
+   transition: all .25s ease-out;
+  }
+
+  .blog-links:hover {
+    color: #0052ea;
+  } 
+
+  .blog-title {
+    font-size: 1.5rem !important;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  .blog-text {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    line-height: 26px;
+    font-size: 16px;  
+    margin: 5px 0 10px;
+    
+  }
+
+  .blog-date {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    font-size: smaller !important;
+    color: #555;
+    margin: 5px 3px;
+  }
+
+  .section2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .section2 ul li a {
+    list-style: none;
+    text-decoration: none;
+  }
   details {
     border: 1px solid #dfdddd;
     border-radius: 4px;
     padding: 0.5em 0.5em 0.5em 0;
+    background-color: #fff;
+    
   }
+details summary { 
+  background-color: #fff;
+  padding: 0.8em 0.5em 0.5em 0.5em;
+}
 
-  header {
-    width: 100%;
-  }
+details .details-nested {
+  line-height: 1.2em;
+}
+details a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: smaller;
+}
 
+details summary div p {
+  padding: 5px;
+  line-height: 1.2em;
+}
+
+details div p {
+  padding: 5px;
+}
+
+details .details-content .card {
+  font-size: 13px;
+  margin-bottom: 15px;
+}
 
 }
+
+/* 
+@media (max-width: 768px) {
+ 
+} */
 
 /* @media only screen 
   and (min-device-width: 375px) 
@@ -328,7 +472,6 @@ section {
 section:last-child {
   margin-right: 0;
 }
-
 
 } */
 

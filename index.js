@@ -44,11 +44,10 @@ detailsSummaries.forEach(summary => {
  // Get the current date and time
  const now = new Date();
  const dateString = now.toDateString();
- const timeString = now.toLocaleTimeString();
-
+ 
  // Update the HTML with the date and time
- const dateEl = document.getElementById("date");
- dateEl.textContent = dateString + " at " + timeString;
+ const dateEl = document.getElementById("blog-date");
+ dateEl.textContent = dateString;
 
 class Animal {
     constructor(name, breed) {
